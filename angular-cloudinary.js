@@ -201,7 +201,8 @@ angularModule.provider('cloudinary', function () {
 			return Upload.upload({
 				url: config.upload_endpoint + cloud_name + '/upload',
 				fields: options,
-				file: file
+				file: file,
+				headers:options.headers||{Authorization:undefined}
 			});
 		}
 	}];
